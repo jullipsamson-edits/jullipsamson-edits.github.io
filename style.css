@@ -10,6 +10,47 @@ body {
   background-color: #0d0d0d;
   color: #f0f0f0;
 }
+
+/* NAVIGATION */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  background-color: rgba(0,0,0,0.3);
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+}
+
+nav ul a {
+  text-decoration: none;
+  color: #aaaaaa;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+}
+
+nav ul a:hover {
+  color: #ffffff;
+}
+
 /* VIDEO BACKGROUND */
 .video-bg {
   position: fixed;
@@ -54,50 +95,6 @@ body {
   position: relative;
   z-index: 1;
 }
-/* NAVIGATION */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 24px 48px;
-  border-bottom: 1px solid #222;
-}
-
-.logo {
-  font-size: 1.2rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  color: #ffffff;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 32px;
-}
-
-nav ul a {
-  text-decoration: none;
-  color: #aaaaaa;
-  font-size: 0.9rem;
-  letter-spacing: 0.05em;
-  transition: color 0.2s;
-}
-
-nav ul a:hover {
-  color: #ffffff;
-}
-
-/* HERO */
-.hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  height: 90vh;
-  padding: 0 24px;
-}
 
 .hero h1 {
   font-size: 3.5rem;
@@ -128,6 +125,7 @@ nav ul a:hover {
 .btn:hover {
   background-color: #cccccc;
 }
+
 /* PAGE HEADER */
 .page-header {
   text-align: center;
@@ -191,6 +189,7 @@ nav ul a:hover {
   padding: 4px 10px;
   border-radius: 20px;
 }
+
 /* ABOUT */
 .about {
   display: flex;
@@ -257,6 +256,7 @@ nav ul a:hover {
   font-size: 0.9rem;
   color: #f0f0f0;
 }
+
 /* CONTACT */
 .contact {
   padding: 80px 48px;
