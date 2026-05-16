@@ -21,7 +21,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 24px;
+  padding: 16px 32px;
   border-bottom: 1px solid rgba(255,255,255,0.08);
   background-color: rgba(0,0,0,0.6);
   backdrop-filter: blur(8px);
@@ -38,7 +38,7 @@ nav {
 nav ul {
   list-style: none;
   display: flex;
-  gap: 16px;
+  gap: 24px;
 }
 
 nav ul a {
@@ -80,7 +80,7 @@ nav ul a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0,0,0,0.6);
 }
 
 /* HERO */
@@ -126,7 +126,7 @@ nav ul a:hover {
 
 .hero p {
   font-size: 1rem;
-  color: #aaaaaa;
+  color: #cccccc;
   margin-bottom: 28px;
   letter-spacing: 0.05em;
 }
@@ -154,6 +154,7 @@ nav ul a:hover {
   cursor: pointer;
   -webkit-appearance: none;
   text-transform: uppercase;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 .btn:hover {
@@ -167,7 +168,7 @@ nav ul a:hover {
 .btn-outline {
   background-color: transparent;
   color: #ffffff;
-  border: 1px solid rgba(255,255,255,0.25);
+  border: 1px solid rgba(255,255,255,0.3);
 }
 
 .btn-outline:hover {
@@ -184,11 +185,14 @@ nav ul a:hover {
   padding: 12px 0;
   overflow: hidden;
   white-space: nowrap;
+  width: 100%;
 }
 
 .marquee-inner {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   animation: marquee 18s linear infinite;
+  will-change: transform;
 }
 
 .marquee-inner span {
@@ -197,6 +201,7 @@ nav ul a:hover {
   font-weight: 700;
   letter-spacing: 0.18em;
   margin: 0 20px;
+  flex-shrink: 0;
 }
 
 .marquee-inner span.dot {
@@ -212,7 +217,7 @@ nav ul a:hover {
 /* PAGE HEADER */
 .page-header {
   text-align: center;
-  padding: 100px 24px 24px;
+  padding: 100px 24px 32px;
 }
 
 .page-header h2 {
@@ -285,7 +290,7 @@ nav ul a:hover {
   display: flex;
   align-items: center;
   gap: 64px;
-  padding: 80px 48px;
+  padding: 100px 48px 60px;
 }
 
 .about-text {
@@ -325,13 +330,16 @@ nav ul a:hover {
 
 /* SKILLS */
 .skills {
-  padding: 0px 48px 80px;
+  padding: 0 48px 60px;
 }
 
 .skills h3 {
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-bottom: 24px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #0D9488;
 }
 
 .skills-grid {
@@ -352,12 +360,12 @@ nav ul a:hover {
 
 /* CONTACT */
 .contact {
-  padding: 80px 48px;
+  padding: 100px 48px 60px;
 }
 
 .contact-header {
   text-align: center;
-  margin-bottom: 56px;
+  margin-bottom: 48px;
 }
 
 .contact-header h2 {
@@ -373,7 +381,7 @@ nav ul a:hover {
 
 .contact-wrapper {
   display: flex;
-  gap: 64px;
+  gap: 48px;
   align-items: flex-start;
 }
 
@@ -391,11 +399,11 @@ nav ul a:hover {
 }
 
 .form-group label {
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   color: #aaaaaa;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .form-group input,
@@ -424,8 +432,6 @@ nav ul a:hover {
 
 .contact-form .btn {
   align-self: flex-start;
-  cursor: pointer;
-  border: none;
 }
 
 .contact-details {
@@ -437,18 +443,18 @@ nav ul a:hover {
 }
 
 .contact-details h3 {
-  font-size: 1.1rem;
+  font-size: 0.8rem;
   font-weight: 700;
   margin-bottom: 20px;
   color: #0D9488;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
 }
 
 .contact-details p {
   color: #aaaaaa;
   font-size: 0.95rem;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   line-height: 1.6;
 }
 
@@ -462,12 +468,13 @@ nav ul a:hover {
   border-top: 1px solid rgba(13,148,136,0.2);
 }
 
-.available-bar .pulse-dot {
+.pulse-dot {
   width: 8px;
   height: 8px;
   background: #0D9488;
   border-radius: 50%;
-  margin-right: 8px;
+  margin-right: 10px;
+  flex-shrink: 0;
   animation: pulse 1.5s ease-in-out infinite;
 }
 
@@ -496,7 +503,7 @@ nav ul a:hover {
   }
 
   nav ul a {
-    font-size: 0.72rem;
+    font-size: 0.7rem;
   }
 
   .video-bg {
@@ -515,15 +522,22 @@ nav ul a:hover {
   .hero-btns {
     flex-direction: column;
     align-items: center;
+    gap: 10px;
   }
 
   .page-header {
-    padding-top: 100px;
+    padding: 90px 24px 24px;
+  }
+
+  .work-grid {
+    padding: 16px 24px 60px;
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .about {
     flex-direction: column;
-    padding: 48px 24px;
+    padding: 90px 24px 40px;
     gap: 32px;
   }
 
@@ -536,17 +550,8 @@ nav ul a:hover {
     padding: 0 24px 48px;
   }
 
-  .work-grid {
-    padding: 24px;
-    grid-template-columns: 1fr;
-  }
-
-  .card-thumb {
-    height: 160px;
-  }
-
   .contact {
-    padding: 48px 24px;
+    padding: 90px 24px 40px;
   }
 
   .contact-wrapper {
