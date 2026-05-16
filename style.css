@@ -559,3 +559,33 @@ nav ul a:hover {
     gap: 32px;
   }
 }
+/* CARD COLOUR VARIANTS */
+.card-teal .card-thumb {
+  border-bottom: 2px solid #0D9488;
+  background-color: #0a1a18;
+}
+
+.card-green .card-thumb {
+  border-bottom: 2px solid #10B981;
+  background-color: #0a1a12;
+}
+
+.card-amber .card-thumb {
+  border-bottom: 2px solid #F59E0B;
+  background-color: #1a1208;
+}
+
+.tag-teal {
+  background: rgba(13,148,136,0.15);
+  color: #0D9488;
+}
+
+.tag-green {
+  background: rgba(16,185,129,0.15);
+  color: #10B981;
+}
+
+.tag-amber {
+  background: rgba(245,158,11,0.15);
+  color: #F59E0B;
+}
