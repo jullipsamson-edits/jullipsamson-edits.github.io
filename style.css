@@ -59,7 +59,7 @@ nav ul a:hover {
 .video-bg {
   position: relative;
   width: 100%;
-  height: calc(100vh - 57px - 44px);
+  height: calc(100vh - 100px);
   overflow: hidden;
   margin-top: 57px;
 }
