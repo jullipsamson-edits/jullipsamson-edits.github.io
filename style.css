@@ -212,7 +212,7 @@ nav ul a:hover {
 /* PAGE HEADER */
 .page-header {
   text-align: center;
-  padding: 120px 24px 40px;
+  padding: 100px 24px 24px;
 }
 
 .page-header h2 {
@@ -230,8 +230,8 @@ nav ul a:hover {
 .work-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 32px;
-  padding: 40px 48px 80px;
+  gap: 24px;
+  padding: 24px 48px 80px;
 }
 
 .card {
@@ -250,7 +250,6 @@ nav ul a:hover {
   justify-content: center;
   color: #444;
   font-size: 0.85rem;
-  margin-bottom: 0;
 }
 
 .card-body {
