@@ -184,21 +184,43 @@ nav ul a:hover {
   background: #0d0d0d;
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   overflow: hidden;
   height: 200px;
 }
 
-.wheel-container {
+.wheel-wrap {
   width: 400px;
   height: 400px;
   flex-shrink: 0;
+}
+
+.spinning-wheel {
+  width: 400px;
+  height: 400px;
+  display: block;
   animation: spin 14s linear infinite;
-  transform-origin: center center;
+  transform-origin: 50% 50%;
 }
 
 @keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .wheel-section {
+    height: 160px;
+  }
+  .wheel-wrap {
+    width: 320px;
+    height: 320px;
+  }
+  .spinning-wheel {
+    width: 320px;
+    height: 320px;
+  }
+}
 }
 
 /* PAGE HEADER */
