@@ -186,41 +186,29 @@ nav ul a:hover {
   justify-content: center;
   align-items: flex-start;
   overflow: hidden;
-  height: 200px;
+  height: 240px;
+  width: 100%;
 }
 
 .wheel-wrap {
-  width: 400px;
-  height: 400px;
+  width: 500px;
+  height: 500px;
   flex-shrink: 0;
+  position: relative;
 }
 
 .spinning-wheel {
-  width: 400px;
-  height: 400px;
+  width: 500px;
+  height: 500px;
   display: block;
   animation: spin 14s linear infinite;
   transform-origin: 50% 50%;
+  transform-box: fill-box;
 }
 
 @keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
-}
-
-@media (max-width: 768px) {
-  .wheel-section {
-    height: 160px;
-  }
-  .wheel-wrap {
-    width: 320px;
-    height: 320px;
-  }
-  .spinning-wheel {
-    width: 320px;
-    height: 320px;
-  }
-}
 }
 
 /* PAGE HEADER */
@@ -600,11 +588,16 @@ nav ul a:hover {
   }
 
   .wheel-section {
-    height: 160px;
+    height: 180px;
   }
 
-  .wheel-container {
-    width: 320px;
-    height: 320px;
+  .wheel-wrap {
+    width: 360px;
+    height: 360px;
+  }
+
+  .spinning-wheel {
+    width: 360px;
+    height: 360px;
   }
 }
