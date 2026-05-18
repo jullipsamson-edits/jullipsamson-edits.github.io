@@ -137,6 +137,32 @@ nav ul a:hover {
   justify-content: center;
   flex-wrap: wrap;
 }
+/* TYPED GREETING */
+.typed-greeting {
+  font-size: 1.1rem;
+  color: #aaaaaa;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.1rem;
+  background: #0D9488;
+  animation: blink 1s step-end infinite;
+  vertical-align: middle;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
 
 /* BUTTONS */
 .btn {
