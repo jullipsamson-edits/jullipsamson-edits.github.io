@@ -34,6 +34,12 @@ nav {
   color: #ffffff;
   white-space: nowrap;
 }
+.logo-img {
+  height: 28px;
+  width: auto;
+  vertical-align: middle;
+  margin-right: 8px;
+}
 
 nav ul {
   list-style: none;
