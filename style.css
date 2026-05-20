@@ -33,13 +33,14 @@ nav {
   letter-spacing: 0.05em;
   color: #ffffff;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
 }
 
 .logo-img {
   height: 32px;
   width: 32px;
   object-fit: contain;
-  vertical-align: middle;
   margin-right: 8px;
 }
 
@@ -269,80 +270,6 @@ nav ul a:hover {
   font-size: 1rem;
 }
 
-/* WORK GRID - OLD */
-.work-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 24px;
-  padding: 24px 48px 80px;
-}
-
-.card {
-  background-color: #151515;
-  border-radius: 10px;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.06);
-}
-
-.card-thumb {
-  background-color: #1a1a1a;
-  height: 180px;
-  border-bottom: 2px solid #0D9488;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #444;
-  font-size: 0.85rem;
-}
-
-.card-body {
-  padding: 20px;
-}
-
-.card h3 {
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 8px;
-  color: #ffffff;
-}
-
-.card p {
-  font-size: 0.85rem;
-  color: #777;
-  margin-bottom: 12px;
-}
-
-.tag {
-  font-size: 0.72rem;
-  background: rgba(13,148,136,0.15);
-  color: #0D9488;
-  padding: 4px 10px;
-  border-radius: 20px;
-  display: inline-block;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-}
-
-.tag-teal {
-  background: rgba(13,148,136,0.15);
-  color: #0D9488;
-}
-
-.tag-green {
-  background: rgba(16,185,129,0.15);
-  color: #10B981;
-}
-
-.tag-amber {
-  background: rgba(245,158,11,0.15);
-  color: #F59E0B;
-}
-
-.tag-purple {
-  background: rgba(139,92,246,0.15);
-  color: #8B5CF6;
-}
-
 /* WORK SECTIONS */
 .work-section {
   padding: 48px 48px 0;
@@ -356,27 +283,6 @@ nav ul a:hover {
 
 .work-section:last-of-type {
   padding-bottom: 80px;
-}
-.play-btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 56px;
-  height: 56px;
-  background: rgba(13,148,136,0.85);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s, transform 0.2s;
-  z-index: 2;
-  cursor: pointer;
-}
-.video-wrapper {
-  position: relative;
-  cursor: pointer;
-  background: #000;
 }
 
 .section-label {
@@ -421,12 +327,53 @@ nav ul a:hover {
   border: 1px solid rgba(255,255,255,0.06);
 }
 
+/* VIDEO WRAPPER & PLAY BUTTON */
+.video-wrapper {
+  position: relative;
+  cursor: pointer;
+  background: #000;
+}
+
 .card-video {
   width: 100%;
   height: 420px;
   object-fit: contain;
   background: #000;
   display: block;
+}
+
+.play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  background: rgba(13,148,136,0.85);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+  z-index: 5;
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.play-btn:hover {
+  background: #0D9488;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.play-btn.hidden {
+  display: none;
+}
+
+.play-icon {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-left: 4px;
+  pointer-events: none;
 }
 
 .card-thumb-new {
@@ -443,12 +390,36 @@ nav ul a:hover {
 .amber-thumb { background-color: #1a1208; border-bottom: 2px solid #F59E0B; }
 .purple-thumb { background-color: #12102a; border-bottom: 2px solid #8B5CF6; }
 
+.card-body {
+  padding: 20px;
+}
+
 .work-card h4 {
   font-size: 0.95rem;
   font-weight: 600;
   margin-bottom: 6px;
   color: #ffffff;
 }
+
+.work-card p {
+  font-size: 0.85rem;
+  color: #777;
+  margin-bottom: 12px;
+}
+
+.tag {
+  font-size: 0.72rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.tag-teal { background: rgba(13,148,136,0.15); color: #0D9488; }
+.tag-green { background: rgba(16,185,129,0.15); color: #10B981; }
+.tag-amber { background: rgba(245,158,11,0.15); color: #F59E0B; }
+.tag-purple { background: rgba(139,92,246,0.15); color: #8B5CF6; }
 
 /* POSTER GRID */
 .poster-grid {
@@ -485,6 +456,11 @@ nav ul a:hover {
   font-weight: 600;
   margin-bottom: 4px;
   color: #ffffff;
+}
+
+.poster-card p {
+  font-size: 0.8rem;
+  color: #777;
 }
 
 /* ABOUT */
@@ -528,6 +504,7 @@ nav ul a:hover {
   justify-content: center;
   color: #444;
   font-size: 0.85rem;
+  overflow: hidden;
 }
 
 .profile-img {
@@ -738,12 +715,6 @@ nav ul a:hover {
     padding: 90px 24px 24px;
   }
 
-  .work-grid {
-    padding: 16px 24px 60px;
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
   .work-section {
     padding: 36px 24px 0;
   }
@@ -758,7 +729,7 @@ nav ul a:hover {
   }
 
   .card-video {
-    height: 200px;
+    height: 400px;
   }
 
   .poster-grid {
