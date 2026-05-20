@@ -253,7 +253,43 @@
         });
       }
     }
-  </script>
+ <script>
+  function playVideo(btn) {
+    const wrapper = btn.parentElement;
+    const video = wrapper.querySelector('video');
+
+    // Pause all other videos first
+    document.querySelectorAll('.card-video').forEach(function(v) {
+      if (v !== video) {
+        v.pause();
+        const otherBtn = v.parentElement.querySelector('.play-btn');
+        if (otherBtn) otherBtn.classList.remove('hidden');
+      }
+    });
+
+    // Play or pause this video
+    if (video.paused) {
+      video.play();
+      btn.classList.add('hidden');
+    } else {
+      video.pause();
+      btn.classList.remove('hidden');
+    }
+  }
+
+  // Also handle clicking directly on the video
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.card-video').forEach(function(video) {
+      video.addEventListener('click', function() {
+        const btn = video.parentElement.querySelector('.play-btn');
+        if (!video.paused) {
+          video.pause();
+          if (btn) btn.classList.remove('hidden');
+        }
+      });
+    });
+  });
+</script>
 
 </body>
 </html>
