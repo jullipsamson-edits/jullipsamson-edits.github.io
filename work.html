@@ -40,9 +40,10 @@
           <video class="card-video" loop playsinline preload="metadata">
             <source src="video1.mp4" type="video/mp4">
           </video>
-          <div class="play-btn" onclick="playVideo(this)">
-            <div class="play-icon">▶</div>
-          </div>
+        <div class="play-btn">
+          <div class="play-icon">▶</div>
+        </div>
+          
         </div>
         <div class="card-body">
           <h4>Brand Reel — Authenticity</h4>
@@ -253,41 +254,51 @@
         });
       }
     }
- <script>
-  function playVideo(btn) {
-    const wrapper = btn.parentElement;
-    const video = wrapper.querySelector('video');
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
 
-    // Pause all other videos first
-    document.querySelectorAll('.card-video').forEach(function(v) {
-      if (v !== video) {
-        v.pause();
-        const otherBtn = v.parentElement.querySelector('.play-btn');
-        if (otherBtn) otherBtn.classList.remove('hidden');
-      }
+    // Load first frame as thumbnail for all videos
+    document.querySelectorAll('.card-video').forEach(function(video) {
+      video.load();
+      video.currentTime = 0.1;
     });
 
-    // Play or pause this video
-    if (video.paused) {
-      video.play();
-      btn.classList.add('hidden');
-    } else {
-      video.pause();
-      btn.classList.remove('hidden');
-    }
-  }
+    // Handle play button clicks
+    document.querySelectorAll('.play-btn').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const wrapper = btn.parentElement;
+        const video = wrapper.querySelector('.card-video');
 
-  // Also handle clicking directly on the video
-  document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.card-video').forEach(function(video) {
-      video.addEventListener('click', function() {
-        const btn = video.parentElement.querySelector('.play-btn');
-        if (!video.paused) {
+        // Pause all other videos
+        document.querySelectorAll('.card-video').forEach(function(v) {
+          if (v !== video) {
+            v.pause();
+            v.parentElement.querySelector('.play-btn').classList.remove('hidden');
+          }
+        });
+
+        // Toggle this video
+        if (video.paused) {
+          video.play();
+          btn.classList.add('hidden');
+        } else {
           video.pause();
-          if (btn) btn.classList.remove('hidden');
+          btn.classList.remove('hidden');
         }
       });
     });
+
+    // Click on video to pause
+    document.querySelectorAll('.card-video').forEach(function(video) {
+      video.addEventListener('click', function() {
+        if (!video.paused) {
+          video.pause();
+          video.parentElement.querySelector('.play-btn').classList.remove('hidden');
+        }
+      });
+    });
+
   });
 </script>
 
