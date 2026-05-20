@@ -357,6 +357,27 @@ nav ul a:hover {
 .work-section:last-of-type {
   padding-bottom: 80px;
 }
+.play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  background: rgba(13,148,136,0.85);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+  z-index: 2;
+  cursor: pointer;
+}
+.video-wrapper {
+  position: relative;
+  cursor: pointer;
+  background: #000;
+}
 
 .section-label {
   display: flex;
@@ -388,8 +409,9 @@ nav ul a:hover {
 
 .work-grid-new {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 360px));
   gap: 20px;
+  justify-content: start;
 }
 
 .work-card {
@@ -401,9 +423,9 @@ nav ul a:hover {
 
 .card-video {
   width: 100%;
-  height: 220px;
-  object-fit: cover;
-  object-position: center top;
+  height: 420px;
+  object-fit: contain;
+  background: #000;
   display: block;
 }
 
