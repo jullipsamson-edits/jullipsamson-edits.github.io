@@ -27,7 +27,7 @@
     <p>A selection of reels, brand content & event coverage.</p>
   </section>
 
-<!-- SOCIAL MEDIA CONTENT -->
+  <!-- SOCIAL MEDIA CONTENT -->
   <section class="work-section">
     <div class="section-label">
       <span class="section-bar teal"></span>
@@ -36,9 +36,14 @@
     <div class="work-grid-new">
 
       <div class="work-card">
-        <video class="card-video" autoplay muted loop playsinline>
-          <source src="video1.mp4" type="video/mp4">
-        </video>
+        <div class="video-wrapper">
+          <video class="card-video" loop playsinline preload="metadata">
+            <source src="video1.mp4" type="video/mp4">
+          </video>
+          <div class="play-btn" onclick="playVideo(this)">
+            <div class="play-icon">▶</div>
+          </div>
+        </div>
         <div class="card-body">
           <h4>Brand Reel — Authenticity</h4>
           <p>Fun, engaging content that puts the brand's real personality front and centre.</p>
@@ -47,9 +52,14 @@
       </div>
 
       <div class="work-card">
-        <video class="card-video" autoplay muted loop playsinline>
-          <source src="video2.mp4" type="video/mp4">
-        </video>
+        <div class="video-wrapper">
+          <video class="card-video" loop playsinline preload="metadata">
+            <source src="video2.mp4" type="video/mp4">
+          </video>
+          <div class="play-btn" onclick="playVideo(this)">
+            <div class="play-icon">▶</div>
+          </div>
+        </div>
         <div class="card-body">
           <h4>Brand Reel — Educational</h4>
           <p>Value-driven content sharing skincare tips tailored to a specific audience.</p>
@@ -58,9 +68,14 @@
       </div>
 
       <div class="work-card">
-        <video class="card-video" autoplay muted loop playsinline>
-          <source src="video3.mp4" type="video/mp4">
-        </video>
+        <div class="video-wrapper">
+          <video class="card-video" loop playsinline preload="metadata">
+            <source src="video3.mp4" type="video/mp4">
+          </video>
+          <div class="play-btn" onclick="playVideo(this)">
+            <div class="play-icon">▶</div>
+          </div>
+        </div>
         <div class="card-body">
           <h4>Behind the Scenes — The Team</h4>
           <p>A human look at the people who make the brand what it is.</p>
@@ -69,9 +84,14 @@
       </div>
 
       <div class="work-card">
-        <video class="card-video" autoplay muted loop playsinline>
-          <source src="video4.mp4" type="video/mp4">
-        </video>
+        <div class="video-wrapper">
+          <video class="card-video" loop playsinline preload="metadata">
+            <source src="video4.mp4" type="video/mp4">
+          </video>
+          <div class="play-btn" onclick="playVideo(this)">
+            <div class="play-icon">▶</div>
+          </div>
+        </div>
         <div class="card-body">
           <h4>Behind the Scenes — Making Process</h4>
           <p>Taking the audience through the craft and care that goes into every product.</p>
@@ -80,9 +100,14 @@
       </div>
 
       <div class="work-card">
-        <video class="card-video" autoplay muted loop playsinline>
-          <source src="video5.mp4" type="video/mp4">
-        </video>
+        <div class="video-wrapper">
+          <video class="card-video" loop playsinline preload="metadata">
+            <source src="video5.mp4" type="video/mp4">
+          </video>
+          <div class="play-btn" onclick="playVideo(this)">
+            <div class="play-icon">▶</div>
+          </div>
+        </div>
         <div class="card-body">
           <h4>Product Showcase — Trending Format</h4>
           <p>Product usage presented through a creative trend to boost reach and engagement.</p>
@@ -91,9 +116,14 @@
       </div>
 
       <div class="work-card">
-        <video class="card-video" autoplay muted loop playsinline>
-          <source src="video6.mp4" type="video/mp4">
-        </video>
+        <div class="video-wrapper">
+          <video class="card-video" loop playsinline preload="metadata">
+            <source src="video6.mp4" type="video/mp4">
+          </video>
+          <div class="play-btn" onclick="playVideo(this)">
+            <div class="play-icon">▶</div>
+          </div>
+        </div>
         <div class="card-body">
           <h4>Product Showcase — Campaign Tie-in</h4>
           <p>Sales content built around a calendar moment to drive timely interest.</p>
@@ -209,6 +239,21 @@
     <div class="pulse-dot"></div>
     <p><strong>Open to work</strong> — Australian brands welcome</p>
   </div>
+
+  <script>
+    function playVideo(btn) {
+      const wrapper = btn.parentElement;
+      const video = wrapper.querySelector('video');
+      if (video.paused) {
+        video.play();
+        btn.classList.add('hidden');
+        video.addEventListener('click', function() {
+          video.pause();
+          btn.classList.remove('hidden');
+        });
+      }
+    }
+  </script>
 
 </body>
 </html>
