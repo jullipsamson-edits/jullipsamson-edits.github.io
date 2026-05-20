@@ -34,6 +34,7 @@ nav {
   color: #ffffff;
   white-space: nowrap;
 }
+
 .logo-img {
   height: 32px;
   width: 32px;
@@ -144,6 +145,7 @@ nav ul a:hover {
   justify-content: center;
   flex-wrap: wrap;
 }
+
 /* TYPED GREETING */
 .typed-greeting {
   font-size: 1.1rem;
@@ -267,7 +269,7 @@ nav ul a:hover {
   font-size: 1rem;
 }
 
-/* WORK GRID */
+/* WORK GRID - OLD */
 .work-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -321,22 +323,6 @@ nav ul a:hover {
   letter-spacing: 0.05em;
 }
 
-/* CARD COLOUR VARIANTS */
-.card-teal .card-thumb {
-  border-bottom: 2px solid #0D9488;
-  background-color: #0a1a18;
-}
-
-.card-green .card-thumb {
-  border-bottom: 2px solid #10B981;
-  background-color: #0a1a12;
-}
-
-.card-amber .card-thumb {
-  border-bottom: 2px solid #F59E0B;
-  background-color: #1a1208;
-}
-
 .tag-teal {
   background: rgba(13,148,136,0.15);
   color: #0D9488;
@@ -350,6 +336,118 @@ nav ul a:hover {
 .tag-amber {
   background: rgba(245,158,11,0.15);
   color: #F59E0B;
+}
+
+.tag-purple {
+  background: rgba(139,92,246,0.15);
+  color: #8B5CF6;
+}
+
+/* WORK SECTIONS - NEW */
+.work-section {
+  padding: 48px 48px 0;
+}
+
+.work-section + .work-section {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  margin-top: 48px;
+  padding-top: 48px;
+}
+
+.work-section:last-of-type {
+  padding-bottom: 80px;
+}
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.section-label h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.section-bar {
+  width: 3px;
+  height: 22px;
+  border-radius: 2px;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.section-bar.teal { background: #0D9488; }
+.section-bar.green { background: #10B981; }
+.section-bar.amber { background: #F59E0B; }
+.section-bar.purple { background: #8B5CF6; }
+
+.work-grid-new {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.work-card {
+  background-color: #151515;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.card-thumb-new {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #444;
+  font-size: 0.85rem;
+}
+
+.teal-thumb { background-color: #0a1a18; border-bottom: 2px solid #0D9488; }
+.green-thumb { background-color: #0a1a12; border-bottom: 2px solid #10B981; }
+.amber-thumb { background-color: #1a1208; border-bottom: 2px solid #F59E0B; }
+.purple-thumb { background-color: #12102a; border-bottom: 2px solid #8B5CF6; }
+
+.work-card h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #ffffff;
+}
+
+/* POSTER GRID */
+.poster-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.poster-card {
+  background-color: #151515;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.poster-thumb {
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #444;
+  font-size: 0.85rem;
+}
+
+.poster-card h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #ffffff;
 }
 
 /* ABOUT */
@@ -394,6 +492,7 @@ nav ul a:hover {
   color: #444;
   font-size: 0.85rem;
 }
+
 .profile-img {
   width: 100%;
   height: 100%;
@@ -608,6 +707,23 @@ nav ul a:hover {
     gap: 16px;
   }
 
+  .work-section {
+    padding: 36px 24px 0;
+  }
+
+  .work-section + .work-section {
+    margin-top: 36px;
+    padding-top: 36px;
+  }
+
+  .work-grid-new {
+    grid-template-columns: 1fr;
+  }
+
+  .poster-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .about {
     flex-direction: column;
     padding: 90px 24px 40px;
@@ -631,130 +747,4 @@ nav ul a:hover {
     flex-direction: column;
     gap: 32px;
   }
-  /* WORK SECTIONS */
-.work-section {
-  padding: 48px 48px 0;
-}
-
-.work-section + .work-section {
-  border-top: 1px solid rgba(255,255,255,0.06);
-  margin-top: 48px;
-  padding-top: 48px;
-}
-
-.work-section:last-of-type {
-  padding-bottom: 80px;
-}
-
-.section-label {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 24px;
-}
-
-.section-label h3 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #ffffff;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.section-bar {
-  width: 3px;
-  height: 22px;
-  border-radius: 2px;
-  display: inline-block;
-  flex-shrink: 0;
-}
-
-.section-bar.teal { background: #0D9488; }
-.section-bar.green { background: #10B981; }
-.section-bar.amber { background: #F59E0B; }
-.section-bar.purple { background: #8B5CF6; }
-
-.work-grid-new {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-}
-
-.work-card {
-  background-color: #151515;
-  border-radius: 10px;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.06);
-}
-
-.card-thumb-new {
-  height: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #444;
-  font-size: 0.85rem;
-}
-
-.teal-thumb { background-color: #0a1a18; border-bottom: 2px solid #0D9488; }
-.green-thumb { background-color: #0a1a12; border-bottom: 2px solid #10B981; }
-.amber-thumb { background-color: #1a1208; border-bottom: 2px solid #F59E0B; }
-.purple-thumb { background-color: #12102a; border-bottom: 2px solid #8B5CF6; }
-
-.work-card h4 {
-  font-size: 0.95rem;
-  font-weight: 600;
-  margin-bottom: 6px;
-  color: #ffffff;
-}
-
-/* POSTER GRID */
-.poster-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
-}
-
-.poster-card {
-  background-color: #151515;
-  border-radius: 10px;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.06);
-}
-
-.poster-thumb {
-  height: 220px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #444;
-  font-size: 0.85rem;
-}
-
-.poster-card h4 {
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 4px;
-  color: #ffffff;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .work-section {
-    padding: 36px 24px 0;
-  }
-
-  .work-section + .work-section {
-    margin-top: 36px;
-    padding-top: 36px;
-  }
-
-  .work-grid-new {
-    grid-template-columns: 1fr;
-  }
-
-  .poster-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 }
