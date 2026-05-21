@@ -299,6 +299,31 @@ nav ul a:hover {
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
+.section-toggle {
+  cursor: pointer;
+  user-select: none;
+  justify-content: space-between;
+}
+
+.section-toggle:hover h3 {
+  color: #0D9488;
+}
+
+.toggle-icon {
+  font-size: 0.75rem;
+  color: #aaaaaa;
+  margin-left: auto;
+  transition: transform 0.2s;
+}
+
+.section-content {
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.section-content.collapsed {
+  display: none;
+}
 
 .section-bar {
   width: 3px;
